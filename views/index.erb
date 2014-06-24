@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+  <title>Pusher Test</title>
+  <script src="//js.pusher.com/2.2/pusher.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    // Enable pusher logging - don't include this in production
+    Pusher.log = function(message) {
+      if (window.console && window.console.log) {
+        window.console.log(message);
+      }
+    };
+
+    var pusher = new Pusher('8c0bcee100b50a1d7826');
+    var channel = pusher.subscribe('test_channel');
+    channel.bind('my_event', function(data) {
+      alert(data.message);
+    });
+  </script>
+</head>
+<body>
+	<h1> Howdy</h1>
+  <div id="log"> 
+    <% @messages.each do |message|%>
+      <%= message.username %>:<%= message.data%><br>
+    <% end %>
+  </div>
+  <form action="/" method="post">
+  Username: <input type="text" name="username"><br>
+  Message: <input type="text" name="data">
+  <input type="submit" value="send">
+  </form>
+</body>
