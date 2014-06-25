@@ -13,7 +13,7 @@
     var pusher = new Pusher('8c0bcee100b50a1d7826');
     var channel = pusher.subscribe('test_channel');
     channel.bind('my_event', function(data) {
-      alert(data.message);
+      location.reload();
     });
   </script>
 </head>

@@ -5,6 +5,7 @@ gem 'slim'
 gem "sinatra-activerecord"
 gem "sqlite3"
 gem "rake"
+gem 'pusher'
 
 group :development do  
 	gem 'tux'
